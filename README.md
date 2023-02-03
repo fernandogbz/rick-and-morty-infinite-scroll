@@ -5,4 +5,5 @@ This project was made by Fernando Jiménez, using only HTML5, CSS, JavaScript an
 View: https://fernandogbz.github.io/rick-and-morty-infinite-scroll/
 <br>
 
-![rick-and-morty-infinite-scroll](https://user-images.githubusercontent.com/112293116/216726903-463fe970-acc5-4eda-a081-48a530dc915e.png)
+
+![rick-and-morty-infinite-scroll](https://user-images.githubusercontent.com/112293116/216727196-20b46ea9-8a9c-4023-b3da-b65f3ec334a8.png)
