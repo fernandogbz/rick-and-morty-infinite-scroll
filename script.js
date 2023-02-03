@@ -12,6 +12,43 @@ const onIntersect = ([entry]) => {
     makeRequest();
 }
 
+const makeRequest = () => {
+  loading = true;
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      cleanUp(data.info.next);
+      renderItems(data.results);
+    });
+}
+
+const cleanUp = nextPage => {
+  apiUrl = nextPage;
+  loading = false;
+}
+
+const renderItems = results => {
+  results.forEach(item => {
+    itemContainer.appendChild(createItem(item));
+  })
+}
+
+const createItem = item => {
+  const newItem = document.createElement('div');
+  newItem.classList.add('item');
+  newItem.innerHTML = (
+    `
+      <div class="char-id">${item.id}</div>
+      <div class="char-name">${item.name}</div>
+      <img class="char-img" src=${item.image}></div>
+      <div class="char-species">${item.species}</div>
+      <div class="char-location">${item.location.name}</div>
+      <div class="char-created">${item.created}</div>
+    `
+  );
+  return newItem;
+}
+
 let observer = new IntersectionObserver(onIntersect, intersectionOptions);
 
 observer.observe(requestTarget);
